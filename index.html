@@ -19,7 +19,7 @@
 </head>
 <body>
     
-    <header>
+    <header class="reveal">
         <div class="interface">
             <div class="logo">
                 <a href="#">
@@ -67,7 +67,7 @@
     </header>
 
     <main>
-        <section class="topo-do-site" id="topo-do-site">
+        <section class="topo-do-site reveal" id="topo-do-site">
             <div class="interface">
                 <div class="flex">
                     <div class="txt-topo-site">
@@ -88,7 +88,7 @@
             </div><!--interface-->
         </section><!--topo-do-site-->
 
-        <section class="especiliadades" id="especialidades">
+        <section class="especiliadades reveal" id="especialidades">
             <div class="interface">
                 <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
                 <div class="flex">
@@ -113,7 +113,7 @@
             </div><!--interface-->
         </section><!--especiliadades-->
 
-        <section class="sobre" id="sobre">
+        <section class="sobre reveal" id="sobre">
             <div class="interface">
                 <div class="flex">
                     <div class="img-sobre">
@@ -134,7 +134,7 @@
             </div><!--interface-->
         </section><!--sobre-->
 
-        <section class="portfolio" id="portfolio">
+        <section class="portfolio reveal" id="portfolio">
             <div class="interface">
                 <h2 class="titulo">MEU <span>PORTFÓLIO.</span></h2>
                 <div class="flex">
@@ -151,7 +151,7 @@
             </div><!--interface-->
         </section><!--portfolio-->
 
-        <section class="formulario">
+        <section class="formulario reveal">
             <div class="interface">
                 <h2 class="titulo">FALA <span>COMIGO.</span></h2>
 
@@ -167,7 +167,7 @@
 
     </main>
 
-    <footer>
+    <footer class="reveal">
         <div class="interface">
             <div class="line-footer">
                 <div class="flex">
@@ -175,9 +175,9 @@
                         <img src="images/logo.png" alt="Logotipo Olig Dev">
                     </div><!--logo-footer-->
                     <div class="btn-social">
-                        <a href="https://www.instagram.com/olignobeat/"><button><i class="bi bi-instagram"></i></button></a>
+                        <a href="https://www.instagram.com/olig.dev/"><button><i class="bi bi-instagram"></i></button></a>
                         <a href="#"><button><i class="bi bi-youtube"></i></button></a>
-                        <a href="https://www.linkedin.com/in/vitor-oliveira-0a5718229/"><button><i class="bi bi-linkedin"></i></button></a>
+                        <a href="https://www.linkedin.com/in/oligdev/"><button><i class="bi bi-linkedin"></i></button></a>
                     </div><!--btn-social-->
                 </div>
             </div><!--line-footer-->
@@ -188,5 +188,23 @@
         </div><!--interface-->
     </footer>
 
+<script>
+// Efeito de surgimento ao rolar a tela
+function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal');
+  for (const el of reveals) {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const revealPoint = 120;
+    if (elementTop < windowHeight - revealPoint) {
+      el.classList.add('active');
+    } else {
+      el.classList.remove('active');
+    }
+  }
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('DOMContentLoaded', revealOnScroll);
+</script>
 </body>
 </html>
